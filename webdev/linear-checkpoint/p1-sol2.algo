@@ -1,0 +1,33 @@
+ALGORITHM sol2
+VAR
+    arr1 : ARRAY_OF INTEGER[12, 13, 6, 10];
+    arr2 : ARRAY_OF INTEGER[13, 10, 16, 15];
+    ht :  HASH_TABLE<INTEGER,INTEGER>;
+    i,c,s : INTEGER;
+BEGIN
+    s:=0;
+    FOR i FROM 0 TO arr1.lenth-1 STEP 1 DO
+        IF (h.lookup(arr1[i])) THEN
+            c:=ht.get(arr1[i]);
+            ht.insert(arr1[i],c+1);
+        ELSE
+            ht.insert(arr1[i],1)
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO arr2.lenth-1 STEP 1  DO
+        IF (h.lookup(arr2[i])) THEN
+            c:=ht.get(arr2[i]);
+            ht.insert(arr2[i],c+1);
+        ELSE
+            ht.insert(arr2[i],1)
+        END_IF
+    END_FOR
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+        c:=htab.get(arr1[i]);
+        IF (c>1) THEN
+            s:= s+arr1[i];
+        END_IF
+    END_FOR
+    Write(s)
+END
