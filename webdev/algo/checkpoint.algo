@@ -1,0 +1,29 @@
+ALGORITHM number_char_words_vowels 
+VAR
+    v : INTEGER := 0;
+    l,w  : INTEGER := 1;
+    c,prec : CHAR := '';
+BEGIN
+
+
+    WHILE (c<>'.') DO
+        Read(c);
+        l:=l+1;
+        IF (c=="a" OR c=="e" OR c=="i" OR c=="o" OR c=="u") THEN
+            v := v+1;
+        END_IF
+
+        IF (carac==" " AND prec<>' ') THEN
+            w := w+1; 
+        END_IF
+        prec = c;
+
+    END_WHILE
+               
+
+    Write("length : ",l);
+    Write("word count",w);
+    Write("vowels",v);
+
+END
+
