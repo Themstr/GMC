@@ -1,0 +1,37 @@
+PROCEDURE dot_product(v1,v2 : ARRAY_OF INTEGER , VAR is_orthogonal : BOOLEAN)
+VAR
+    dot_product_value,i : INTEGER;
+BEGIN
+    dot_product_value := 0;
+
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        dot_product_value := dot_product_value + v1[i]*v2[i];
+    END_FOR
+
+    IF (dot_product_value = 0) THEN
+    
+        is_orthogonal := TRUE;
+        
+    ELSE
+        is_orthogonal := FALSE;
+        
+    END_IF
+END
+
+ALGORITHM Scalaire
+VAR
+    v1 : ARRAY_OF INTEGER[1,2,3];
+    v2 : ARRAY_OF INTEGER[4,5,6];
+    ort : BOOLEAN;
+BEGIN
+    IF (v1.length = v2.length) THEN
+        dot_product(v1,v2,ort);
+        IF (ort = TRUE) THEN
+            Write("V1 and V2 are orthogonal");
+        ELSE
+            Write("V1 and V2 are not orthogonal");
+        END_IF
+    ELSE
+        Write("Vectors must have the same size");
+    END_IF
+END
