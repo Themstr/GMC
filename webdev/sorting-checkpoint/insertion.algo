@@ -1,0 +1,25 @@
+ALGORITHM InsertionSort
+VAR
+    tab : ARRAY_OF INTEGER[5,2,9,1,4];
+    i,j,tmp : INTEGER;
+BEGIN
+
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+
+        j := i;
+        tmp := tab[i];
+
+        WHILE (j>0 AND tab[j-1]>tmp) DO
+            tab[j] := tab[j-1];
+            j := j-1;
+        END_WHILE 
+
+        tab[j] := tmp;
+
+    END_FOR
+
+    FOR i FROM 0 TO tab.length-1 STEP 1  DO
+        Write(tab[i]);
+    END_FOR
+
+END
